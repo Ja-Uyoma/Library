@@ -13,6 +13,42 @@
     </header>
     <main>
       <button>Add</button>
+
+      <dialog>
+        <p>Add a new book</p>
+
+        <form action="/" method="post">
+          <label for="name">
+            Name
+            <input type="text" name="name" required />
+          </label>
+
+          <label for="author">
+            Author
+            <input type="text" name="author" required />
+          </label>
+
+          <label for="page-count">
+            Number of Pages
+            <input type="number" name="page-count" required />
+          </label>
+
+          <fieldset>
+            <legend>Have you read it?</legend>
+
+            <label for="read">
+              Yes
+              <input type="radio" name="read?" required />
+            </label>
+
+            <label for="unread">
+              No
+              <input type="radio" name="read?" required />
+            </label>
+          </fieldset>
+          <button type="submit">Submit</button>
+        </form>
+      </dialog>
     </main>
     <footer>
       <p>Copyright &copy; <span>2024</span> by Jimmy Givans</p>
