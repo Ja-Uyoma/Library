@@ -1,4 +1,4 @@
-import Book from "./Book";
+import Book from "./Book.ts";
 
 let myLibrary: Book[] = [
   new Book("A Game of Thrones", "George R. R. Martin", 694, true),
