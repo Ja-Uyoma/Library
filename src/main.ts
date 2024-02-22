@@ -7,3 +7,15 @@ let myLibrary: Book[] = [
   new Book("A Feast for Crows", "George R. R. Martin", 753, true),
   new Book("A Dance with Dragons", "George R. R. Martin", 1016, true),
 ];
+
+function displayLibrary() {
+  const main = document.querySelector("main");
+
+  myLibrary.forEach((book) => {
+    const p = document.createElement("p");
+    p.textContent = book.info();
+    main?.appendChild(p);
+  });
+}
+
+displayLibrary();
