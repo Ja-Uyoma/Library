@@ -18,4 +18,14 @@ function displayLibrary() {
   });
 }
 
+const button = document.querySelector("main > button");
+const dialog = document.querySelector("main > dialog");
+
+if (button !== null && dialog !== null) {
+  button.addEventListener("click", () => {
+    console.log("Button clicked!");
+    dialog.showModal();
+  });
+}
+
 displayLibrary();
