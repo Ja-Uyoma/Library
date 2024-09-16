@@ -9,23 +9,21 @@ let myLibrary: Book[] = [
 ];
 
 function displayLibrary() {
-  const main = document.querySelector("main");
+  const main: HTMLElement = document.querySelector("main")!;
 
   myLibrary.forEach((book) => {
     const p = document.createElement("p");
     p.textContent = book.info();
-    main?.appendChild(p);
+    main.appendChild(p);
   });
 }
 
-const button = document.querySelector("main > button");
-const dialog = document.querySelector("main > dialog");
+const button: HTMLButtonElement = document.querySelector("main > button")!;
+const dialog: HTMLDialogElement = document.querySelector("main > dialog")!;
 
-if (button !== null && dialog !== null) {
-  button.addEventListener("click", () => {
-    console.log("Button clicked!");
-    dialog.showModal();
-  });
-}
+button.addEventListener("click", () => {
+  console.log("Button clicked!");
+  dialog.showModal();
+});
 
 displayLibrary();
