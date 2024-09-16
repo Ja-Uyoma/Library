@@ -1,26 +1,31 @@
-export default class Book {
-  private title: string = "";
-  private author: string = "";
-  private numberOfPages: number = 0;
-  private isRead: boolean = false;
+import Book from "./Book.ts";
 
-  constructor(title: string, author: string, numberOfPages: number, isRead: boolean) {
-    this.title = title;
-    this.author = author;
-    this.numberOfPages = numberOfPages;
-    this.isRead = isRead;
-  }
+let myLibrary: Book[] = [
+  new Book("A Game of Thrones", "George R. R. Martin", 694, true),
+  new Book("A Clash of Kings", "George R. R. Martin", 761, true),
+  new Book("A Storm of Swords", "George R. R. Martin", 973, true),
+  new Book("A Feast for Crows", "George R. R. Martin", 753, true),
+  new Book("A Dance with Dragons", "George R. R. Martin", 1016, true),
+];
 
-  info(): string {
-    let readStatus = null;
+function displayLibrary() {
+  const main = document.querySelector("main");
 
-    if (this.isRead) {
-      readStatus = "read";
-    }
-    else {
-      readStatus = "not yet read";
-    }
-
-    return `${this.title} by ${this.author}, ${this.numberOfPages} pages, ${readStatus}`;
-  }
+  myLibrary.forEach((book) => {
+    const p = document.createElement("p");
+    p.textContent = book.info();
+    main?.appendChild(p);
+  });
 }
+
+const button = document.querySelector("main > button");
+const dialog = document.querySelector("main > dialog");
+
+if (button !== null && dialog !== null) {
+  button.addEventListener("click", () => {
+    console.log("Button clicked!");
+    dialog.showModal();
+  });
+}
+
+displayLibrary();
