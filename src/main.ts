@@ -21,11 +21,9 @@ function displayLibrary() {
 const button: HTMLButtonElement = document.querySelector("main > button")!;
 const dialog: HTMLDialogElement = document.querySelector("main > dialog")!;
 
-if (button !== null && dialog !== null) {
-  button.addEventListener("click", () => {
-    console.log("Button clicked!");
-    dialog.showModal();
-  });
-}
+button.addEventListener("click", () => {
+  console.log("Button clicked!");
+  dialog.showModal();
+});
 
 displayLibrary();
