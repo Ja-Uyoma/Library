@@ -35,13 +35,7 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const formData = new FormData(form);
-  const title = formData.get("title")!.toString();
-  const author = formData.get("author")!.toString();
-  const pages = Number.parseInt(formData.get("page-count")!.toString());
-  const read = formData.get("read-or-unread")!.toString();
-
-  const book = new Book(title, author, pages, read === "Read" ? true : false);
-
+  const book = createBook(formData);
   myLibrary.push(book);
 
   clearScreen();
@@ -55,4 +49,13 @@ function clearScreen() {
   const div: HTMLDivElement = document.querySelector("main > div")!;
 
   main.removeChild(div);
+}
+
+function createBook(formData: FormData) {
+  const title = formData.get("title")!.toString();
+  const author = formData.get("author")!.toString();
+  const pages = Number.parseInt(formData.get("page-count")!.toString());
+  const read = formData.get("read-or-unread")!.toString();
+
+  return new Book(title, author, pages, read === "Read" ? true : false);
 }
