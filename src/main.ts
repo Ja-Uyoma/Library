@@ -46,6 +46,8 @@ form.addEventListener("submit", (e) => {
 
   clearScreen();
   displayLibrary();
+
+  dialog.close();
 });
 
 function clearScreen() {
