@@ -33,7 +33,9 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const formData = new FormData(form);
-  formData.forEach((entry) => {
-    console.log(entry);
-  });
+
+  console.log("Title is ", formData.get("title"));
+  console.log("Author is ", formData.get("author"));
+  console.log("Page count is", formData.get("page-count"));
+  console.log("Read? ", formData.get("read-or-unread"));
 });
