@@ -16,6 +16,22 @@ export default class Book {
     this.m_isRead = isRead;
   }
 
+  public get title(): string {
+    return this.m_title;
+  }
+
+  public get author(): string {
+    return this.m_author;
+  }
+
+  public get numberOfPages(): number {
+    return this.m_numberOfPages;
+  }
+
+  public get isRead(): boolean {
+    return this.isRead;
+  }
+
   info(): string {
     let readStatus = null;
 
