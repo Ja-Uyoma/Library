@@ -10,11 +10,13 @@ let myLibrary: Book[] = [
 
 function displayLibrary() {
   const main: HTMLElement = document.querySelector("main")!;
+  const div: HTMLDivElement = document.createElement("div");
+  main.appendChild(div);
 
   myLibrary.forEach((book) => {
     const p = document.createElement("p");
     p.textContent = book.info();
-    main.appendChild(p);
+    div.appendChild(p);
   });
 }
 
