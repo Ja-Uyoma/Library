@@ -33,9 +33,12 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const formData = new FormData(form);
+  const title = formData.get("title")!.toString();
+  const author = formData.get("author")!.toString();
+  const pages = Number.parseInt(formData.get("page-count")!.toString());
+  const read = formData.get("read-or-unread")!.toString();
 
-  console.log("Title is ", formData.get("title"));
-  console.log("Author is ", formData.get("author"));
-  console.log("Page count is", formData.get("page-count"));
-  console.log("Read? ", formData.get("read-or-unread"));
+  const book = new Book(title, author, pages, read === "Read" ? true : false);
+
+  myLibrary.push(book);
 });
