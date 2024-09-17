@@ -26,3 +26,14 @@ button.addEventListener("click", () => {
 });
 
 displayLibrary();
+
+const form = document.querySelector("form")!;
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const formData = new FormData(form);
+  formData.forEach((entry) => {
+    console.log(entry);
+  });
+});
