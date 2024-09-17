@@ -22,7 +22,6 @@ const button: HTMLButtonElement = document.querySelector("main > button")!;
 const dialog: HTMLDialogElement = document.querySelector("main > dialog")!;
 
 button.addEventListener("click", () => {
-  console.log("Button clicked!");
   dialog.showModal();
 });
 
