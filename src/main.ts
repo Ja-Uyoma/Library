@@ -44,3 +44,10 @@ form.addEventListener("submit", (e) => {
 
   myLibrary.push(book);
 });
+
+function clearScreen() {
+  const main: HTMLElement = document.querySelector("main")!;
+  const div: HTMLDivElement = document.querySelector("main > div")!;
+
+  main.removeChild(div);
+}
