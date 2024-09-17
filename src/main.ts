@@ -43,6 +43,9 @@ form.addEventListener("submit", (e) => {
   const book = new Book(title, author, pages, read === "Read" ? true : false);
 
   myLibrary.push(book);
+
+  clearScreen();
+  displayLibrary();
 });
 
 function clearScreen() {
