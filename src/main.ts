@@ -60,7 +60,7 @@ const createPageCountElement = () => {
   return document.createElement("p");
 };
 
-const renderStatus = () => {
+const createStatusElement = () => {
   const status = document.createElement("button");
   status.classList.add("bg-green-500");
   status.classList.add("rounded-2xl");
@@ -118,7 +118,7 @@ function renderBook(book: Book) {
   const title = createTitleElement();
   const author = createAuthorElement();
   const pages = createPageCountElement();
-  const status = renderStatus();
+  const status = createStatusElement();
   const deleteBtn = renderDeleteButton();
 
   title.textContent = book.title;
