@@ -1,4 +1,5 @@
 export class Book {
+  private m_id: number = 1;
   private m_title: string = "";
   private m_author: string = "";
   private m_numberOfPages: number = 0;
@@ -14,6 +15,10 @@ export class Book {
     this.m_author = author;
     this.m_numberOfPages = numberOfPages;
     this.m_isRead = isRead;
+  }
+
+  public get id(): number {
+    return this.m_id;
   }
 
   public get title(): string {
