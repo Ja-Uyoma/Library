@@ -29,9 +29,13 @@ const renderParent = () => {
   return parent;
 };
 
-  const title = document.createElement("p");
+const renderTitle = () => {
+  return document.createElement("p");
+};
+
 function renderBook(book: Book) {
   const parent = renderParent();
+  const title = renderTitle();
   const author = document.createElement("p");
   const pages = document.createElement("p");
   const status = document.createElement("p");
