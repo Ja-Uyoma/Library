@@ -10,18 +10,25 @@ let myLibrary: Book[] = [
 
 function displayLibrary() {
   const main: HTMLElement = document.querySelector("main")!;
-  const grid: HTMLDivElement = document.createElement("div");
-  grid.classList.add("px-8");
-  grid.classList.add("grid");
-  grid.classList.add("auto-rows-auto");
-  grid.classList.add("grid-cols-3");
-  grid.classList.add("gap-6");
+  const grid = createGrid();
   main.appendChild(grid);
 
   myLibrary.forEach((book) => {
     grid.appendChild(renderBook(book));
   });
 }
+
+const createGrid = () => {
+  const grid = document.createElement("div");
+
+  grid.classList.add("px-8");
+  grid.classList.add("grid");
+  grid.classList.add("auto-rows-auto");
+  grid.classList.add("grid-cols-3");
+  grid.classList.add("gap-6");
+
+  return grid;
+};
 
 const renderParent = () => {
   const parent = document.createElement("div");
