@@ -58,4 +58,4 @@ This project is licensed under the MIT license. See LICENSE.md for more informat
 
 ## Project Status
 
-This project is still ongoing.
+This project is complete.
