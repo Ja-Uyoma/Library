@@ -35,4 +35,15 @@ describe("Book", () => {
 
     expect(agot.author).toBe("George R. R. Martin");
   });
+
+  test("method numberOfPages gets the book's page count", () => {
+    const agot = new Book(
+      "A Game of Thrones",
+      "George R. R. Martin",
+      694,
+      true
+    );
+
+    expect(agot.numberOfPages).toBe(694);
+  });
 });
