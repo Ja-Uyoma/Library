@@ -12,7 +12,7 @@ export const createGrid = () => {
   return grid;
 };
 
-export const createParentElement = () => {
+const createParentElement = () => {
   const div = document.createElement("div");
 
   div.classList.add("bg-white");
@@ -31,19 +31,19 @@ export const createParentElement = () => {
   return div;
 };
 
-export const createTitleElement = () => {
+const createTitleElement = () => {
   return document.createElement("p");
 };
 
-export const createAuthorElement = () => {
+const createAuthorElement = () => {
   return document.createElement("p");
 };
 
-export const createPageCountElement = () => {
+const createPageCountElement = () => {
   return document.createElement("p");
 };
 
-export const createStatusElement = () => {
+const createStatusElement = () => {
   const status = document.createElement("button");
 
   status.classList.add("bg-green-500");
