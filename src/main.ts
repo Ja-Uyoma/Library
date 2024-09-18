@@ -54,7 +54,7 @@ const renderPageCount = () => {
 };
 
 const renderStatus = () => {
-  return document.createElement("p");
+  return document.createElement("button");
 };
 
 function renderBook(book: Book) {
