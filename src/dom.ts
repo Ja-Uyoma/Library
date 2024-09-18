@@ -17,9 +17,9 @@ const createParentElement = () => {
 
   div.classList.add("bg-white");
   div.classList.add("border");
-  div.classList.add("rounded-md");
+  div.classList.add("rounded-lg");
   div.classList.add("my-2");
-  div.classList.add("p-2");
+  div.classList.add("p-4");
   div.classList.add("flex");
   div.classList.add("flex-col");
   div.classList.add("items-center");
