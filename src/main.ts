@@ -56,7 +56,7 @@ const createAuthorElement = () => {
   return document.createElement("p");
 };
 
-const renderPageCount = () => {
+const createPageCountElement = () => {
   return document.createElement("p");
 };
 
@@ -117,7 +117,7 @@ function renderBook(book: Book) {
   const parent = createBookContainer();
   const title = createTitleElement();
   const author = createAuthorElement();
-  const pages = renderPageCount();
+  const pages = createPageCountElement();
   const status = renderStatus();
   const deleteBtn = renderDeleteButton();
 
