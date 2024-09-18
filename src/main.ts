@@ -52,7 +52,7 @@ const createTitleElement = () => {
   return document.createElement("p");
 };
 
-const renderAuthor = () => {
+const createAuthorElement = () => {
   return document.createElement("p");
 };
 
@@ -116,7 +116,7 @@ const renderDeleteButton = () => {
 function renderBook(book: Book) {
   const parent = createBookContainer();
   const title = createTitleElement();
-  const author = renderAuthor();
+  const author = createAuthorElement();
   const pages = renderPageCount();
   const status = renderStatus();
   const deleteBtn = renderDeleteButton();
