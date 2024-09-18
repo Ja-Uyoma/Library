@@ -33,12 +33,24 @@ const renderTitle = () => {
   return document.createElement("p");
 };
 
+const renderAuthor = () => {
+  return document.createElement("p");
+};
+
+const renderPageCount = () => {
+  return document.createElement("p");
+};
+
+const renderStatus = () => {
+  return document.createElement("p");
+};
+
 function renderBook(book: Book) {
   const parent = renderParent();
   const title = renderTitle();
-  const author = document.createElement("p");
-  const pages = document.createElement("p");
-  const status = document.createElement("p");
+  const author = renderAuthor();
+  const pages = renderPageCount();
+  const status = renderStatus();
 
   title.textContent = book.title;
   author.textContent = book.author;
