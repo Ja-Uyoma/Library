@@ -18,9 +18,20 @@ function displayLibrary() {
   });
 }
 
-function renderBook(book: Book) {
+const renderParent = () => {
   const parent = document.createElement("div");
+  parent.classList.add("bg-white");
+  parent.classList.add("border");
+  parent.classList.add("rounded-md");
+  parent.classList.add("my-2");
+  parent.classList.add("p-2");
+
+  return parent;
+};
+
   const title = document.createElement("p");
+function renderBook(book: Book) {
+  const parent = renderParent();
   const author = document.createElement("p");
   const pages = document.createElement("p");
   const status = document.createElement("p");
