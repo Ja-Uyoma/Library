@@ -25,6 +25,9 @@ const renderParent = () => {
   parent.classList.add("rounded-md");
   parent.classList.add("my-2");
   parent.classList.add("p-2");
+  parent.classList.add("flex");
+  parent.classList.add("flex-col");
+  parent.classList.add("items-center");
 
   return parent;
 };
