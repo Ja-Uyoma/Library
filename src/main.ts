@@ -14,10 +14,37 @@ function displayLibrary() {
   main.appendChild(div);
 
   myLibrary.forEach((book) => {
-    const p = document.createElement("p");
-    p.textContent = book.info();
-    div.appendChild(p);
+    div.appendChild(renderBook(book));
   });
+}
+
+function renderBook(book: Book) {
+  const parent = document.createElement("div");
+  const title = document.createElement("p");
+  const author = document.createElement("p");
+  const pages = document.createElement("p");
+  const status = document.createElement("p");
+
+  title.textContent = book.title;
+  author.textContent = book.author;
+  pages.textContent = book.numberOfPages.toString();
+
+  const isRead = () => {
+    if (book.isRead) {
+      return "Read";
+    } else {
+      return "Unread";
+    }
+  };
+
+  status.textContent = isRead();
+
+  parent.appendChild(title);
+  parent.appendChild(author);
+  parent.appendChild(pages);
+  parent.appendChild(status);
+
+  return parent;
 }
 
 const button: HTMLButtonElement = document.querySelector("main > button")!;
