@@ -1,7 +1,7 @@
 import Book from "./Book.ts";
 import {
   createGrid,
-  createBookContainer,
+  createParentElement,
   createTitleElement,
   createAuthorElement,
   createPageCountElement,
@@ -28,7 +28,7 @@ function displayLibrary() {
 }
 
 function renderBook(book: Book) {
-  const parent = createBookContainer();
+  const parent = createParentElement();
   const title = createTitleElement();
   const author = createAuthorElement();
   const pages = createPageCountElement();

@@ -10,7 +10,7 @@ export const createGrid = () => {
   return grid;
 };
 
-export const createBookContainer = () => {
+export const createParentElement = () => {
   const div = document.createElement("div");
 
   div.classList.add("bg-white");
