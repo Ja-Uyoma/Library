@@ -30,7 +30,7 @@ const createGrid = () => {
   return grid;
 };
 
-const renderParent = () => {
+const createBookContainer = () => {
   const parent = document.createElement("div");
   parent.classList.add("bg-white");
   parent.classList.add("border");
@@ -114,7 +114,7 @@ const renderDeleteButton = () => {
 };
 
 function renderBook(book: Book) {
-  const parent = renderParent();
+  const parent = createBookContainer();
   const title = renderTitle();
   const author = renderAuthor();
   const pages = renderPageCount();
