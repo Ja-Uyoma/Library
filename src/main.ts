@@ -95,7 +95,7 @@ function renderBook(book: Book) {
 
   title.textContent = book.title;
   author.textContent = book.author;
-  pages.textContent = book.numberOfPages.toString();
+  pages.textContent = book.numberOfPages.toString() + " Pages";
 
   const isRead = () => {
     if (book.isRead) {
