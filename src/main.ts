@@ -18,6 +18,12 @@ function renderLibrary() {
   myLibrary.forEach((book) => {
     const card = createBookCard(book);
     const btn = createDeleteButton();
+
+    btn.addEventListener("click", () => {
+      myLibrary.splice(book.id, 1);
+      refresh();
+    });
+
     card.appendChild(btn);
     grid.appendChild(card);
   });
