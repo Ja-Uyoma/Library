@@ -24,4 +24,15 @@ describe("Book", () => {
 
     expect(agot.title).toBe("A Game of Thrones");
   });
+
+  test("method author gets the book author", () => {
+    const agot = new Book(
+      "A Game of Thrones",
+      "George R. R. Martin",
+      694,
+      true
+    );
+
+    expect(agot.author).toBe("George R. R. Martin");
+  });
 });
