@@ -31,7 +31,9 @@ function renderLibrary() {
   });
 }
 
-const button: HTMLButtonElement = document.querySelector("main > button")!;
+const button: HTMLButtonElement = document.querySelector(
+  "main > div > button"
+)!;
 const dialog: HTMLDialogElement = document.querySelector("main > dialog")!;
 
 button.addEventListener("click", () => {
