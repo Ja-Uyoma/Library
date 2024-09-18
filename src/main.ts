@@ -31,21 +31,21 @@ const createGrid = () => {
 };
 
 const createBookContainer = () => {
-  const parent = document.createElement("div");
-  parent.classList.add("bg-white");
-  parent.classList.add("border");
-  parent.classList.add("rounded-md");
-  parent.classList.add("my-2");
-  parent.classList.add("p-2");
-  parent.classList.add("flex");
-  parent.classList.add("flex-col");
-  parent.classList.add("items-center");
-  parent.classList.add("gap-2");
-  parent.classList.add("font-medium");
-  parent.classList.add("text-lg");
-  parent.classList.add("text-slate-800");
+  const div = document.createElement("div");
+  div.classList.add("bg-white");
+  div.classList.add("border");
+  div.classList.add("rounded-md");
+  div.classList.add("my-2");
+  div.classList.add("p-2");
+  div.classList.add("flex");
+  div.classList.add("flex-col");
+  div.classList.add("items-center");
+  div.classList.add("gap-2");
+  div.classList.add("font-medium");
+  div.classList.add("text-lg");
+  div.classList.add("text-slate-800");
 
-  return parent;
+  return div;
 };
 
 const renderTitle = () => {
