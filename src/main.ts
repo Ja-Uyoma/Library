@@ -93,7 +93,7 @@ const createStatusElement = () => {
   return status;
 };
 
-const renderDeleteButton = () => {
+const createDeleteButton = () => {
   const btn = document.createElement("button");
 
   btn.classList.add("bg-sky-500");
@@ -119,7 +119,7 @@ function renderBook(book: Book) {
   const author = createAuthorElement();
   const pages = createPageCountElement();
   const status = createStatusElement();
-  const deleteBtn = renderDeleteButton();
+  const deleteBtn = createDeleteButton();
 
   title.textContent = book.title;
   author.textContent = book.author;
