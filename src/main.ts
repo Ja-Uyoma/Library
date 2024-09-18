@@ -1,14 +1,5 @@
 import { Book, createBookFromFormData } from "./Book.ts";
-import {
-  createGrid,
-  createParentElement,
-  createTitleElement,
-  createAuthorElement,
-  createPageCountElement,
-  createStatusElement,
-  createDeleteButton,
-  createBookCard,
-} from "./dom.ts";
+import { createGrid, createBookCard } from "./dom.ts";
 
 let myLibrary: Book[] = [
   new Book("A Game of Thrones", "George R. R. Martin", 694, true),
