@@ -9,8 +9,9 @@ let myLibrary: Book[] = [
   new Book("A Dance with Dragons", "George R. R. Martin", 1016, true),
 ];
 
+const main: HTMLElement = document.querySelector("main")!;
+
 function displayLibrary() {
-  const main: HTMLElement = document.querySelector("main")!;
   const grid = createGrid();
   main.appendChild(grid);
 
@@ -44,7 +45,6 @@ form.addEventListener("submit", (e) => {
 });
 
 function clearScreen() {
-  const main: HTMLElement = document.querySelector("main")!;
   const div: HTMLDivElement = document.querySelector("main > div")!;
 
   main.removeChild(div);
