@@ -1,5 +1,5 @@
 import { Book, createBookFromFormData } from "./Book.ts";
-import { createGrid, createBookCard } from "./dom.ts";
+import { createGrid, createBookCard, createDeleteButton } from "./dom.ts";
 
 let myLibrary: Book[] = [
   new Book("A Game of Thrones", "George R. R. Martin", 694, true),
@@ -16,7 +16,10 @@ function renderLibrary() {
   main.appendChild(grid);
 
   myLibrary.forEach((book) => {
-    grid.appendChild(createBookCard(book));
+    const card = createBookCard(book);
+    const btn = createDeleteButton();
+    card.appendChild(btn);
+    grid.appendChild(card);
   });
 }
 
