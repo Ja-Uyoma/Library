@@ -20,7 +20,8 @@ function renderLibrary() {
     const btn = createDeleteButton();
 
     btn.addEventListener("click", () => {
-      myLibrary.splice(book.id, 1);
+      let target = myLibrary.findIndex((item) => item.id === book.id);
+      myLibrary.splice(target, 1);
       refresh();
     });
 
