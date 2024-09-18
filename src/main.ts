@@ -11,7 +11,7 @@ let myLibrary: Book[] = [
 
 const main: HTMLElement = document.querySelector("main")!;
 
-function displayLibrary() {
+function renderLibrary() {
   const grid = createGrid();
   main.appendChild(grid);
 
@@ -27,7 +27,7 @@ button.addEventListener("click", () => {
   dialog.showModal();
 });
 
-displayLibrary();
+renderLibrary();
 
 const form = document.querySelector("form")!;
 
@@ -39,7 +39,7 @@ form.addEventListener("submit", (e) => {
   myLibrary.push(book);
 
   clearScreen();
-  displayLibrary();
+  renderLibrary();
 
   dialog.close();
 });
