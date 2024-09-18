@@ -46,4 +46,15 @@ describe("Book", () => {
 
     expect(agot.numberOfPages).toBe(694);
   });
+
+  test("method isRead tells whether the book has been read or not", () => {
+    const agot = new Book(
+      "A Game of Thrones",
+      "George R. R. Martin",
+      694,
+      true
+    );
+
+    expect(agot.isRead).toBe(true);
+  });
 });
