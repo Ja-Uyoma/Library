@@ -1,3 +1,5 @@
+import { Book } from "./Book";
+
 export const createGrid = () => {
   const grid = document.createElement("div");
 
@@ -93,4 +95,33 @@ export const createDeleteButton = () => {
   btn.classList.add("text-white");
 
   return btn;
+};
+
+export const createBookCard = (book: Book) => {
+  const parent = createParentElement();
+  const title = createTitleElement();
+  const author = createAuthorElement();
+  const pages = createPageCountElement();
+  const status = createStatusElement();
+
+  title.textContent = book.title;
+  author.textContent = book.author;
+  pages.textContent = book.numberOfPages.toString() + " Pages";
+
+  const isRead = () => {
+    if (book.isRead) {
+      return "Read";
+    } else {
+      return "Unread";
+    }
+  };
+
+  status.textContent = isRead();
+
+  parent.appendChild(title);
+  parent.appendChild(author);
+  parent.appendChild(pages);
+  parent.appendChild(status);
+
+  return parent;
 };

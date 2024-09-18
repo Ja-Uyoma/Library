@@ -7,6 +7,7 @@ import {
   createPageCountElement,
   createStatusElement,
   createDeleteButton,
+  createBookCard,
 } from "./dom.ts";
 
 let myLibrary: Book[] = [
@@ -23,40 +24,8 @@ function displayLibrary() {
   main.appendChild(grid);
 
   myLibrary.forEach((book) => {
-    grid.appendChild(renderBook(book));
+    grid.appendChild(createBookCard(book));
   });
-}
-
-function renderBook(book: Book) {
-  const parent = createParentElement();
-  const title = createTitleElement();
-  const author = createAuthorElement();
-  const pages = createPageCountElement();
-  const status = createStatusElement();
-  const deleteBtn = createDeleteButton();
-
-  title.textContent = book.title;
-  author.textContent = book.author;
-  pages.textContent = book.numberOfPages.toString() + " Pages";
-
-  const isRead = () => {
-    if (book.isRead) {
-      return "Read";
-    } else {
-      return "Unread";
-    }
-  };
-
-  status.textContent = isRead();
-  deleteBtn.textContent = "Delete";
-
-  parent.appendChild(title);
-  parent.appendChild(author);
-  parent.appendChild(pages);
-  parent.appendChild(status);
-  parent.appendChild(deleteBtn);
-
-  return parent;
 }
 
 const button: HTMLButtonElement = document.querySelector("main > button")!;
