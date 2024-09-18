@@ -55,7 +55,7 @@ const renderPageCount = () => {
 
 const renderStatus = () => {
   const status = document.createElement("button");
-  status.classList.add("bg-sky-500");
+  status.classList.add("bg-green-500");
   status.classList.add("rounded-2xl");
   status.classList.add("px-6");
   status.classList.add("py-1");
