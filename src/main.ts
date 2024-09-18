@@ -10,16 +10,16 @@ let myLibrary: Book[] = [
 
 function displayLibrary() {
   const main: HTMLElement = document.querySelector("main")!;
-  const div: HTMLDivElement = document.createElement("div");
-  div.classList.add("px-8");
-  div.classList.add("grid");
-  div.classList.add("auto-rows-auto");
-  div.classList.add("grid-cols-3");
-  div.classList.add("gap-6");
-  main.appendChild(div);
+  const grid: HTMLDivElement = document.createElement("div");
+  grid.classList.add("px-8");
+  grid.classList.add("grid");
+  grid.classList.add("auto-rows-auto");
+  grid.classList.add("grid-cols-3");
+  grid.classList.add("gap-6");
+  main.appendChild(grid);
 
   myLibrary.forEach((book) => {
-    div.appendChild(renderBook(book));
+    grid.appendChild(renderBook(book));
   });
 }
 
