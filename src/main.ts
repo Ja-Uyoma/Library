@@ -1,4 +1,5 @@
-import Book from "./Book.ts";
+import { Book, createBookFromFormData } from "./Book.ts";
+import { createGrid, createBookCard, createDeleteButton } from "./dom.ts";
 
 let myLibrary: Book[] = [
   new Book("A Game of Thrones", "George R. R. Martin", 694, true),
@@ -8,22 +9,60 @@ let myLibrary: Book[] = [
   new Book("A Dance with Dragons", "George R. R. Martin", 1016, true),
 ];
 
-function displayLibrary() {
-  const main: HTMLElement = document.querySelector("main")!;
+const main: HTMLElement = document.querySelector("main")!;
+
+function renderLibrary() {
+  const grid = createGrid();
+  grid.id = "grid";
+  main.appendChild(grid);
 
   myLibrary.forEach((book) => {
-    const p = document.createElement("p");
-    p.textContent = book.info();
-    main.appendChild(p);
+    const card = createBookCard(book);
+    const btn = createDeleteButton();
+
+    btn.addEventListener("click", () => {
+      let target = myLibrary.findIndex((item) => item.id === book.id);
+      myLibrary.splice(target, 1);
+      refresh();
+    });
+
+    card.appendChild(btn);
+    grid.appendChild(card);
   });
 }
 
-const button: HTMLButtonElement = document.querySelector("main > button")!;
+const button: HTMLButtonElement = document.querySelector(
+  "main > div > button"
+)!;
 const dialog: HTMLDialogElement = document.querySelector("main > dialog")!;
 
 button.addEventListener("click", () => {
-  console.log("Button clicked!");
   dialog.showModal();
 });
 
-displayLibrary();
+renderLibrary();
+
+const form = document.querySelector("form")!;
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const formData = new FormData(form);
+  const book = createBookFromFormData(formData);
+  myLibrary.push(book);
+
+  refresh();
+
+  dialog.close();
+});
+
+function clearScreen() {
+  const grid = document.querySelector("div#grid")!;
+
+  main.removeChild(grid);
+}
+
+const refresh = () => {
+  clearScreen();
+  renderLibrary();
+};

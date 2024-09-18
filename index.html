@@ -8,50 +8,103 @@
     <title>Library</title>
   </head>
   <body>
-    <header>
-      <h1>Library</h1>
-    </header>
-    <main>
-      <button>Add</button>
+    <div class="flex flex-col min-h-screen">
+      <header
+        class="prose lowercase py-6 px-24 max-w-full bg-[#fffbfb] drop-shadow-md"
+      >
+        <h1>Library</h1>
+      </header>
+      <main class="bg-[#f0eef1] grow pb-4">
+        <div class="flex items-center justify-center">
+          <button
+            class="bg-sky-500 rounded-2xl px-6 py-1 active:shadow-lg active:scale-95 outline-none transition duration-100 ease-in-out hover:border-y-sky-800 font-medium text-white my-4"
+          >
+            Add
+          </button>
+        </div>
 
-      <dialog>
-        <p>Add a new book</p>
+        <dialog class="rounded-lg p-4">
+          <p class="font-medium text-slate-800 text-center pb-3">
+            Add a new book
+          </p>
 
-        <form action="/" method="post">
-          <label for="name">
-            Name
-            <input type="text" name="name" required />
-          </label>
-
-          <label for="author">
-            Author
-            <input type="text" name="author" required />
-          </label>
-
-          <label for="page-count">
-            Number of Pages
-            <input type="number" name="page-count" required />
-          </label>
-
-          <fieldset>
-            <legend>Have you read it?</legend>
-
-            <label for="read">
-              Yes
-              <input type="radio" name="read?" required />
+          <form action="/" method="post" class="flex flex-col gap-4">
+            <label for="title">
+              <input
+                type="text"
+                name="title"
+                id="title"
+                placeholder="Title"
+                required
+                autocomplete="name"
+                class="rounded-lg"
+              />
             </label>
 
-            <label for="unread">
-              No
-              <input type="radio" name="read?" required />
+            <label for="author">
+              <input
+                type="text"
+                name="author"
+                id="author"
+                placeholder="Author"
+                required
+                class="rounded-lg"
+              />
             </label>
-          </fieldset>
-          <button type="submit">Submit</button>
-        </form>
-      </dialog>
-    </main>
-    <footer>
-      <p>Copyright &copy; <span>2024</span> by Jimmy Givans</p>
-    </footer>
+
+            <label for="page-count">
+              <input
+                type="number"
+                name="page-count"
+                id="page-count"
+                placeholder="Number Of Pages"
+                required
+                min="0"
+                class="rounded-lg"
+              />
+            </label>
+
+            <fieldset>
+              <legend class="text-center font-medium text-gray-600">
+                Have you read it?
+              </legend>
+
+              <div class="flex justify-center gap-2">
+                <label for="read">
+                  Yes
+                  <input
+                    type="radio"
+                    name="read-or-unread"
+                    id="read"
+                    value="Read"
+                    required
+                  />
+                </label>
+
+                <label for="unread">
+                  No
+                  <input
+                    type="radio"
+                    name="read-or-unread"
+                    id="unread"
+                    value="Unread"
+                    required
+                  />
+                </label>
+              </div>
+            </fieldset>
+            <button
+              type="submit"
+              class="bg-sky-500 rounded-2xl px-6 py-1 active:shadow-lg active:scale-95 outline-none transition duration-100 ease-in-out hover:border-y-sky-800 font-medium text-white"
+            >
+              Submit
+            </button>
+          </form>
+        </dialog>
+      </main>
+      <footer class="mt-auto py-4 prose font-medium text-center max-w-full">
+        <p>Copyright &copy; <span>2024</span> by Jimmy Givans</p>
+      </footer>
+    </div>
   </body>
 </html>
