@@ -45,7 +45,7 @@ form.addEventListener("submit", (e) => {
 });
 
 function clearScreen() {
-  const div: HTMLDivElement = document.querySelector("main > div")!;
+  const grid: HTMLDivElement = document.querySelector("main > div")!;
 
-  main.removeChild(div);
+  main.removeChild(grid);
 }
