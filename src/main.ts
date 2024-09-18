@@ -69,6 +69,20 @@ const renderStatus = () => {
   status.classList.add("font-medium");
   status.classList.add("text-white");
 
+  status.addEventListener("click", () => {
+    const current = status.textContent;
+
+    if (current === "Read") {
+      status.textContent = "Unread";
+      status.classList.remove("bg-green-500");
+      status.classList.add("bg-red-500");
+    } else if (current === "Unread") {
+      status.textContent = "Read";
+      status.classList.remove("bg-red-500");
+      status.classList.add("bg-green-500");
+    }
+  });
+
   return status;
 };
 
