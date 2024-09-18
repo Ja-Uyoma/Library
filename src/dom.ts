@@ -31,20 +31,27 @@ const createParentElement = () => {
   return div;
 };
 
-const createTitleElement = () => {
-  return document.createElement("p");
+const createTitleElement = (bookTitle: string) => {
+  const title = document.createElement("p");
+  title.textContent = bookTitle;
+  return title;
 };
 
-const createAuthorElement = () => {
-  return document.createElement("p");
+const createAuthorElement = (bookAuthor: string) => {
+  const author = document.createElement("p");
+  author.textContent = bookAuthor;
+  return author;
 };
 
-const createPageCountElement = () => {
-  return document.createElement("p");
+const createPageCountElement = (pages: number) => {
+  const count = document.createElement("p");
+  count.textContent = pages.toString() + " Pages";
+  return count;
 };
 
-const createStatusElement = () => {
+const createStatusElement = (isRead: boolean) => {
   const status = document.createElement("button");
+  status.textContent = isRead ? "Read" : "Unread";
 
   status.classList.add("bg-green-500");
   status.classList.add("rounded-2xl");
@@ -99,24 +106,10 @@ export const createDeleteButton = () => {
 
 export const createBookCard = (book: Book) => {
   const parent = createParentElement();
-  const title = createTitleElement();
-  const author = createAuthorElement();
-  const pages = createPageCountElement();
-  const status = createStatusElement();
-
-  title.textContent = book.title;
-  author.textContent = book.author;
-  pages.textContent = book.numberOfPages.toString() + " Pages";
-
-  const isRead = () => {
-    if (book.isRead) {
-      return "Read";
-    } else {
-      return "Unread";
-    }
-  };
-
-  status.textContent = isRead();
+  const title = createTitleElement(book.title);
+  const author = createAuthorElement(book.author);
+  const pages = createPageCountElement(book.numberOfPages);
+  const status = createStatusElement(book.isRead);
 
   parent.appendChild(title);
   parent.appendChild(author);
