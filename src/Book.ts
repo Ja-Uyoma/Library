@@ -29,7 +29,7 @@ export default class Book {
   }
 
   public get isRead(): boolean {
-    return this.isRead;
+    return this.m_isRead;
   }
 
   info(): string {
