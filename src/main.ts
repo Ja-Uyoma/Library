@@ -1,4 +1,4 @@
-import { Book } from "./Book.ts";
+import { Book, createBookFromFormData } from "./Book.ts";
 import {
   createGrid,
   createParentElement,
@@ -74,7 +74,7 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const formData = new FormData(form);
-  const book = createBook(formData);
+  const book = createBookFromFormData(formData);
   myLibrary.push(book);
 
   clearScreen();
@@ -88,13 +88,4 @@ function clearScreen() {
   const div: HTMLDivElement = document.querySelector("main > div")!;
 
   main.removeChild(div);
-}
-
-function createBook(formData: FormData) {
-  const title = formData.get("title")!.toString();
-  const author = formData.get("author")!.toString();
-  const pages = Number.parseInt(formData.get("page-count")!.toString());
-  const read = formData.get("read-or-unread")!.toString();
-
-  return new Book(title, author, pages, read === "Read" ? true : false);
 }

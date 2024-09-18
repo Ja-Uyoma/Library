@@ -44,3 +44,12 @@ export class Book {
     return `${this.m_title} by ${this.m_author}, ${this.m_numberOfPages} pages, ${readStatus}`;
   }
 }
+
+export const createBookFromFormData = (formData: FormData) => {
+  const title = formData.get("title")!.toString();
+  const author = formData.get("author")!.toString();
+  const pages = Number.parseInt(formData.get("page-count")!.toString());
+  const read = formData.get("read-or-unread")!.toString();
+
+  return new Book(title, author, pages, read === "Read" ? true : false);
+};
