@@ -86,6 +86,7 @@ const createStatusElement = (isRead: boolean) => {
 
 export const createDeleteButton = () => {
   const btn = document.createElement("button");
+  btn.textContent = "Delete";
 
   btn.classList.add("bg-sky-500");
   btn.classList.add("rounded-2xl");
