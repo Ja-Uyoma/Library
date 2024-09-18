@@ -13,6 +13,7 @@ const main: HTMLElement = document.querySelector("main")!;
 
 function renderLibrary() {
   const grid = createGrid();
+  grid.id = "grid";
   main.appendChild(grid);
 
   myLibrary.forEach((book) => {
@@ -54,7 +55,7 @@ form.addEventListener("submit", (e) => {
 });
 
 function clearScreen() {
-  const grid: HTMLDivElement = document.querySelector("main > div")!;
+  const grid = document.querySelector("div#grid")!;
 
   main.removeChild(grid);
 }
