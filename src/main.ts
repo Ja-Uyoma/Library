@@ -11,6 +11,11 @@ let myLibrary: Book[] = [
 function displayLibrary() {
   const main: HTMLElement = document.querySelector("main")!;
   const div: HTMLDivElement = document.createElement("div");
+  div.classList.add("px-8");
+  div.classList.add("grid");
+  div.classList.add("auto-rows-auto");
+  div.classList.add("grid-cols-3");
+  div.classList.add("gap-6");
   main.appendChild(div);
 
   myLibrary.forEach((book) => {
