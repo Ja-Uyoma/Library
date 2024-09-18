@@ -1,4 +1,4 @@
-export default class Book {
+export class Book {
   private m_title: string = "";
   private m_author: string = "";
   private m_numberOfPages: number = 0;

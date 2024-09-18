@@ -1,4 +1,4 @@
-import Book from "./Book.ts";
+import { Book } from "./Book.ts";
 import {
   createGrid,
   createParentElement,

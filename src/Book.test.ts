@@ -1,4 +1,4 @@
-import Book from "./Book";
+import { Book } from "./Book";
 import { describe, expect, test } from "vitest";
 
 describe("Book", () => {
