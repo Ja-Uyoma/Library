@@ -54,7 +54,22 @@ const renderPageCount = () => {
 };
 
 const renderStatus = () => {
-  return document.createElement("button");
+  const status = document.createElement("button");
+  status.classList.add("bg-sky-500");
+  status.classList.add("rounded-2xl");
+  status.classList.add("px-6");
+  status.classList.add("py-1");
+  status.classList.add("active:shadow-lg");
+  status.classList.add("active:scale-95");
+  status.classList.add("outline-none");
+  status.classList.add("transition");
+  status.classList.add("duration-100");
+  status.classList.add("ease-in-out");
+  status.classList.add("hover:border-y-sky-800");
+  status.classList.add("font-medium");
+  status.classList.add("text-white");
+
+  return status;
 };
 
 function renderBook(book: Book) {
