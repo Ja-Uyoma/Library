@@ -33,6 +33,10 @@ const renderParent = () => {
   parent.classList.add("flex");
   parent.classList.add("flex-col");
   parent.classList.add("items-center");
+  parent.classList.add("gap-2");
+  parent.classList.add("font-medium");
+  parent.classList.add("text-lg");
+  parent.classList.add("text-slate-800");
 
   return parent;
 };
