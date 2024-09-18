@@ -38,8 +38,7 @@ form.addEventListener("submit", (e) => {
   const book = createBookFromFormData(formData);
   myLibrary.push(book);
 
-  clearScreen();
-  renderLibrary();
+  refresh();
 
   dialog.close();
 });
@@ -49,3 +48,8 @@ function clearScreen() {
 
   main.removeChild(grid);
 }
+
+const refresh = () => {
+  clearScreen();
+  renderLibrary();
+};
