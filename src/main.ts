@@ -86,12 +86,33 @@ const renderStatus = () => {
   return status;
 };
 
+const renderDeleteButton = () => {
+  const btn = document.createElement("button");
+
+  btn.classList.add("bg-sky-500");
+  btn.classList.add("rounded-2xl");
+  btn.classList.add("px-6");
+  btn.classList.add("py-1");
+  btn.classList.add("active:shadow-lg");
+  btn.classList.add("active:scale-95");
+  btn.classList.add("outline-none");
+  btn.classList.add("transition");
+  btn.classList.add("duration-100");
+  btn.classList.add("ease-in-out");
+  btn.classList.add("hover:border-y-sky-800");
+  btn.classList.add("font-medium");
+  btn.classList.add("text-white");
+
+  return btn;
+};
+
 function renderBook(book: Book) {
   const parent = renderParent();
   const title = renderTitle();
   const author = renderAuthor();
   const pages = renderPageCount();
   const status = renderStatus();
+  const deleteBtn = renderDeleteButton();
 
   title.textContent = book.title;
   author.textContent = book.author;
@@ -106,11 +127,13 @@ function renderBook(book: Book) {
   };
 
   status.textContent = isRead();
+  deleteBtn.textContent = "Delete";
 
   parent.appendChild(title);
   parent.appendChild(author);
   parent.appendChild(pages);
   parent.appendChild(status);
+  parent.appendChild(deleteBtn);
 
   return parent;
 }
